@@ -11,3 +11,12 @@ footer {
     padding: 20px;
     background-color: #ffffff;
 }
+nav ul li a {
+    color: #333; /* Default link color */
+    text-decoration: none; /* Removes underline from links */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+nav ul li a:hover {
+    color: #1244b0; /* Color change on hover */
+}
