@@ -1,22 +1,63 @@
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #ffffff;
-    color: #333;
-    line-height: 1.6;
+body, p, ul {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
 }
 
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
-footer {
+main h1 {
+    margin: 0; /* Removes default margin */
+    font-size: 100px; /* Large font size for the main heading */
+    font-weight: bold;
+}
+main h2 {
+    margin: 0; /* Removes default margin */
+    font-size: 32px; /* Large font size for the main heading */
+    font-weight: bold;
+}
+
+.container {
     text-align: center;
-    padding: 20px;
-    background-color: #ffffff;
-}
-nav ul li a {
-    color: #333; /* Default link color */
-    text-decoration: none; /* Removes underline from links */
-    transition: color 0.3s; /* Smooth transition for color change */
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-nav ul li a:hover {
-    color: #1244b0; /* Color change on hover */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding-top: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+    position: relative; /* Create a positioning context for the pseudo-element */
+}
+
+nav ul li a::before {
+    content: ''; /* Create an empty pseudo-element */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Start with no width */
+    height: 2px; /* Set the height and style of the underline */
+    background-color: black;
+    transition: width 0.3s ease; /* Animate the width property */
+}
+
+nav ul li a:hover::before {
+    width: 100%; 
 }
